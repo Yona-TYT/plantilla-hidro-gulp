@@ -14,13 +14,15 @@ gulp.task('connect', function() {
 	function connectServe(done){
 		connect.server({
 			root: baseDir,
-			livereload: true,
-			port: 2772
+			//livereload: true,
+			/*middleware: function (connect, opt) {
+        	    return compilePug({url:"tyt"}, "tyyh")
+			}*/
 		});
 	}
-
+	/*
 	function browsersyncReload(cb){
-		browsersync.reload();
+		connect.reload();
 		//cb();
 	}
 	//Watch Task
@@ -40,11 +42,22 @@ gulp.task('connect', function() {
 	//console.log("Test hereeeeeeeeeee:")
 	//console.log(paths)
 	//console.log(compilePug(paths.base))
-	connectServe()
 	//watchTask()
+	*/
+	connectServe()
 });
 
 gulp.task("watch", () => {
+
+	function connectServe(){
+		connect.server({
+			root: baseDir,
+			livereload: true,
+			/*middleware: function (connect, opt) {
+        	    return compilePug({url:"tyt"}, "tyyh")
+			}*/
+		});
+	}
 	//Browsersync Task
 	function browsersyncServe(done){
 		browserSync.init({
@@ -52,13 +65,14 @@ gulp.task("watch", () => {
 			//proxy: '127.0.0.1:8010',
 			//port: 3000,
 			open: false, // or "local"
-			host: "hidroingelec.onrender.com",
+			//host: "35.160.120.126",
 			//notify: false,
 			middleware: compilePug,
 		});
 		//done();
 	}
 	function browsersyncReload(cb){
+
 		browsersync.reload();
 		//cb();
 	}
@@ -76,7 +90,7 @@ gulp.task("watch", () => {
 			gulp.series(browsersyncReload)
 		);
 	}
-
+	connectServe()
 	browsersyncServe()
 	watchTask()
 });
