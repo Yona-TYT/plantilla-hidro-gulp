@@ -1,0 +1,178 @@
+//- ===============================================
+//-     Global  Variables
+//- ===============================================
+block variables
+	- var CWD = ''+"../";
+	- var attrsHtml = { lang: `${ dir === 'rtl' ? 'ar' : 'en-US'}`, dir: dir || 'ltr' };
+	- var title = 'Hidroingelec | Ingenieria Idraulica y Eléctrica';
+	- var attrsBody = {};
+	- var attrsMain = {};
+	- var attrsLayout = {};
+	- var APIGmap = 'AIzaSyARdVcREeBK44lIWnv5-iPijKqvlSAVwbw';
+
+	- var currentPage = 'index'
+	- var busin_name = "HIDROINGELEC"
+
+append variables
+	- var currentPage = 'index'
+	- var busin_name = "HIDROINGELEC"
+
+	//Navegation Bar------------------------------------
+	-
+		var head_list = [
+			{
+				title : "Home", url : `${CWD}index.html#header`, curr : true
+			},
+			{
+				title : "Services", url : `${CWD}index.html#services`, curr : false
+			},
+			{
+				title : "Projects", url : "#projects", curr : false
+			},
+			{
+				title : "Contact", url : "#contact", curr : false
+			},
+			{
+				title : "Gallery", url : "/extending/gallery.html", curr : false
+			},
+			{
+				title : "Videos", url : "/extending/videos.html", curr : false
+			}
+		]
+	//---------------------------------------------------
+
+	//Services ---------------------------------------------------------------------------
+	- titl_a = "Mantenimiento"
+	- txt_a = "Mantenimiento correctivo y preventivo en salas de bombas."
+	- icon_a = "i class = 'fas fa-wrench fa-3x btn-success'"
+	- titl_b = "Estanques"
+	- txt_b = "Venta e instalación para estanques de presión."
+	- icon_b = "i class = 'fas fa-wrench fa-3x btn-success'"
+	- titl_c = "Piscinas"
+	- txt_c = "Limpieza y mantenimiento a piscinas."
+	- icon_c = "i class = 'fas fa-wrench fa-3x btn-success'"
+	- titl_d = "Tableros"
+	- txt_d = "Diseño y control en tableros de fuerza y control."
+	- icon_d = "i class = 'fas fa-wrench fa-3x btn-success'"
+	- titl_e = "Plantas"
+	- txt_e = "Construcción de plantas de tratamiento."
+	- icon_e = "i class = 'fas fa-wrench fa-3x btn-success'"
+	- titl_f = "Técnicos"
+	- txt_f = "Servicio Técnico en terreno."
+	- icon_f = "i class = 'fas fa-wrench fa-3x btn-success'"
+	-
+		var services = [
+			{
+				title : titl_a, text: txt_a, icon : icon_a, url : "#", name : "Leer Mas"
+			},
+			{
+				title : titl_b, text: txt_b, icon : icon_b, url : "#", name : "Leer Mas"
+			},
+			{
+				title : titl_c, text: txt_c, icon : icon_c, url : "#", name : "Leer Mas"
+			},
+			{
+				title : titl_d, text: txt_d, icon : icon_d, url : "#", name : "Leer Mas"
+			},
+			{
+				title : titl_e, text: txt_e, icon : icon_e, url : "#", name : "Leer Mas"
+			},
+			{
+				title : titl_f, text: txt_f, icon : icon_f, url : "#", name : "Leer Mas"
+			}
+		]
+		//----------------------------------------------------------------------------------
+
+	//Projects -------------------------------------------------------------------------------------------------------------
+	- type = "jpg"
+	-
+		iten1 = {
+					image: '1.'+type, title:'Fernando Soler', designation:'Telecommunication Engineer', 
+					text:'"Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae',
+					bg: 'bg-dark-gradient',
+					btnText:'Learn More'
+		}
+	-
+		iten2 = {
+					image: '2.'+type, title:'Ilone Pickford', designation:'Head of Agrogofund ',
+					text:'"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium ',
+					bg: 'bg-dark-gradient',
+					btnText:'Learn More'
+		}
+	-
+		iten3 = {
+					image: '3.'+type, title:'Ed O’Brien', designation:'Herbalist',
+					text:'"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium ',
+					bg: 'bg-dark-gradient',
+					btnText:'Learn More'
+		}
+	//---------------------------------------------------------------------------------------------------------------------------
+
+	//Contact -------------------------------------------------------------------------------------------------------------------
+	-
+		cont_fall = [
+			{
+				title : "", icon : "i class = 'fab fa-facebook-f text-dark'", url : "#"
+			},
+			{
+				title : "", icon : "i class = 'fab fa-twitter text-dark'", url : "#"
+			},
+			{
+				title : "", icon : "i class = 'fab fa-instagram text-dark'", url : "#"
+			},
+			{
+				title : "", icon : "i class = 'fab fa-linkedin-in text-dark'", url : "#"
+			}
+		]
+	-
+		cont_addr = [
+			{
+				title : "123 Street, CA, USA", icon : "p hidden", url : "#"
+			}
+		]
+	-
+		cont_call = [
+			{
+				title : " +012.34567890", icon : "i class = 'fas fa-phone-alt text-dark'", url : "tel:+0123456789"
+			},
+			{
+				title : " +58 414-3256688", icon : "i class = 'fab fa-whatsapp text-dark'", url : "https://wa.me/58414000000"
+			}
+		]
+	-
+		cont_mail = [
+			{
+				title : "info@example.com", icon : "p hidden", url : "mailto:info@example.com"
+			}
+		]
+	- ico_fall= "i class = 'fa fa-share'"
+	- ico_addr = "i class = 'fas fa-map-marker-alt'"
+	- ico_call = "i class = 'fa fa-phone'"
+	- ico_mail = "i class = 'fa fa-envelope'"
+	- 
+		var contact = [
+			{
+				title : "fallow Us", icon : ico_fall, content : cont_fall
+			},
+			{
+				title : "Address", icon : ico_addr, content : cont_addr
+			},
+			{
+				title : "Call Us", icon : ico_call, content : cont_call
+			},
+			{
+				title : "Email Us", icon : ico_mail, content : cont_mail
+			}
+		]
+	//---------------------------------------------------------------------------------------------------------------------------
+
+	//Videos --------------------------------------------------------------------------------------------
+	-	
+		var video_list = [
+			{src : "video_1", text : "Desc Video", img : "poster_1.png", post : false},
+			{src : "video_1", text : "Desc Video", img : "poster_1.png", post : false},
+			{src : "video_1", text : "Desc Video", img : "poster_1.png", post : false},
+			{src : "video_1", text : "Desc Video", img : "poster_1.png", post : true},
+		]
+	//---------------------------------------------------------------------------------------------------------------------------
+

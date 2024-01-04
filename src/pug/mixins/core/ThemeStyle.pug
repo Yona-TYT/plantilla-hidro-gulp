@@ -1,0 +1,11 @@
+mixin ThemeStyle
+	if dir !== 'rtl'
+		link(href=`${CWD}assets/css/theme${ENV === 'PROD'? '.min': ''}.css`, rel='stylesheet')
+	else
+		link(href=`${CWD}assets/css/theme-rtl${ENV === 'PROD'? '.min': ''}.css`, rel='stylesheet')
+	= '\n'
+
+	//link(href=`${CWD}assets/css/bootstrap.min.css`, type="text/css", rel="StyleSheet", media="screen")
+	link(href=`${CWD}../my_style/style.css`, type="text/css", rel="StyleSheet", media="screen")
+	//link(href=`${CWD}assets/css/animate.min.css`, type="text/css", rel="StyleSheet", media="screen")
+	link(href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css", type="text/css", rel="StyleSheet", media="screen")

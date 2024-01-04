@@ -1,0 +1,42 @@
+
+mixin Contact
+	- var address = "Calle fray Juan de ibarguen # 249 diagonal al hogar Alemán kolbe Alto comuna Osorno Los Lagos"
+	.container-fluid.py-5#contact
+		.container.py-5
+			.row.g-5.mb-5
+				.col-lg-6.wow.fadeInUp(data-wow-delay=".3s", style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;")
+					.h-100(style="min-height: 200pt;")
+						//.border-0.rounded.w-100.h-100
+						iframe.border-0.rounded.w-100.h-100( src="/extending/map.html")
+
+				.col-lg-6.wow.fadeInUp(data-wow-delay=".5s", style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;")
+					h5.fw-bold.fs-3.fs-lg-5.lh-sm.mb-3 Contacto
+					p.mb-4= address
+					.rounded.contact-form
+						.mb-4
+							input(type="text", class="form-control p-3", placeholder="Your Name")
+						.mb-4
+							input(type="email", class="form-control p-3", placeholder="Your Email")
+						.mb-4
+							input(type="text", class="form-control p-3", placeholder="Subject")
+						.mb-4
+							textarea.w-100.form-control.p-3( rows="6", cols="10", placeholder="Message")
+						button.btn.btn-primary.py-3.px-4(type="button") Send Message
+
+			.row.g-4.wow.fadeInUp(data-wow-delay=".3s", style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;")
+				each val in contact
+					.col-xxl-3.col-lg-6.col-md-6.col-sm-12
+						.d-flex.bg-light.p-3.rounded.contact-btn-link
+							.btn.btn-primary.align-items-center.justify-content-center.bg-primary.rounded-circle.p-3.ms-3(style="width: 64px; height: 64px;")
+								#{val.icon}
+							.ms-3.contact-link
+								h4.text-dark= val.title
+								div.d-flex.justify-content-center
+									each conte in val.content
+										a.px-2(href=conte.url)
+											#{conte.icon}
+											= conte.title
+
+
+
+			

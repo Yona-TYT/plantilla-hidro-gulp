@@ -1,0 +1,46 @@
+mixin FooterList(...items)
+	each item in items
+		li.mb-3
+			a.text-700.text-decoration-none(href='#!')
+				=item
+
+mixin Footer
+	section.py-0
+		+Background({ image: `${CWD}assets/img/illustrations/footer-bg.png`, attrs: { style: { 'background-position': 'center', 'background-size': 'cover'} }, className: '' })
+		.container
+			.row.justify-content-lg-between(style="padding-top:5rem")
+				.col-6.col-sm-4.col-lg-auto.mb-3
+					h6.mb-3.text-1000.fw-semi-bold COMPANY 
+					ul.list-unstyled.mb-md-4.mb-lg-0
+						+FooterList('About Us','Team','Careers','Contact')
+
+				.col-6.col-sm-4.col-lg-auto.mb-3
+					h6.mb-3.text-1000.fw-semi-bold INVEST 
+					ul.list-unstyled.mb-md-4.mb-lg-0
+						+FooterList('Features','How it works','Pricing','Login')
+				.col-6.col-sm-4.col-lg-auto.mb-3
+					h6.mb-3.text-1000.fw-semi-bold LEGAL 
+					ul.list-unstyled.mb-md-4.mb-lg-0
+						+FooterList('Privacy','Terms','Security')
+
+			hr.text-300.mb-0 
+			.row.justify-content-lg-between
+				.col-6.col-sm-4.col-lg-auto.mb-3.text-center.text-md-start 
+					a(href=`${CWD}index.html#header`).text-decoration-none
+						img.d-inline-block.align-top.img-fluid(src= `${CWD}assets/img/gallery/logo-min.svg` alt='' width='40')
+						span.text-theme.font-monospace.fs-1.ps-2= busin_name   
+  
+				.col-6.col-sm-4.col-lg-auto.mb-3
+					each val in cont_fall
+						a.px-2(href=val.url)
+							#{val.icon}
+
+				.col-6.col-sm-4.col-lg-auto.mb-3
+					p.fs-1.text-dark.my-2.text-center.text-md-end &copy; This template is made with&nbsp;
+						svg.bi.bi-suit-heart-fill(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#76C279' viewBox='0 0 16 16')
+							path(d='M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z')
+
+							|&nbsp;by&nbsp;
+							a(href='https://themewagon.com/' target='_blank').text-dark ThemeWagon 
+
+        

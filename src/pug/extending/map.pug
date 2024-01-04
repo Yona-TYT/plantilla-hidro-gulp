@@ -1,0 +1,105 @@
+
+//- ===============================================
+//-     Global  Variables
+//- ===============================================
+include ../Variables
+
+
+//- ===============================================
+//-     Basic Modules
+//- ===============================================
+include ../mixins/core/Functions
+include ../mixins/core/Background
+include ../mixins/core/Section
+include ../mixins/core/ThemeStyle
+include ../mixins/navbars/NavbarHidroingelec
+include ../mixins/home/landing/Footer
+include ../mixins/home/landing/Goup
+
+doctype html
+html()&attributes(attrsHtml)
+	head
+	block meta
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='viewport' content='width=device-width, initial-scale=1')
+
+
+	= '\n\n'
+	// ===============================================
+	//    Document Title
+	// ===============================================
+	title=title
+
+
+	= '\n\n'
+	// ===============================================
+	//    Favicons
+	// ===============================================
+	block favicon
+		link(rel="apple-touch-icon" sizes="180x180", href=`${CWD}assets/img/favicons/apple-touch-icon.svg`)
+		link(rel="icon" type="image/png" sizes="32x32", href=`${CWD}assets/img/favicons/favicon-32x32.svg`)
+		link(rel="icon" type="image/png" sizes="16x16", href=`${CWD}assets/img/favicons/favicon-16x16.svg`)
+		link(rel="shortcut icon" type="image/svg+xml", href=`${CWD}assets/img/favicons/favicon.svg`)
+		link(rel="manifest", href=`${CWD}assets/img/favicons/manifest.json`)
+		meta(name='msapplication-TileImage', content=`${CWD}assets/img/favicons/mstile-150x150.svg`)
+		meta(name="theme-color" content="#ffffff")
+
+
+	block headScripts
+
+	= '\n\n'
+	// ===============================================
+	//    Stylesheets
+	// ===============================================
+
+	block styles
+		include MapStyle
+		+ThemeStyle
+		link(href=`${CWD}my_style/video-style.css`, type="text/css", rel="StyleSheet", media="screen")
+
+		link(href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css", type="text/css", rel="StyleSheet", media="screen")
+
+	= '\n\n'
+
+	- var city = "Osorno"
+	- var contry = "Chile"
+
+	- var addr = "Fray+Juan+de+Irarguen+248"
+
+	- var pos = {x : -40.5654983, y : -73.1101296}
+	body(onLoad="CargaScript("+pos.x+","+pos.y+");")
+		script(src=`${CWD}/my_style/map/map.js`)
+		.border-0.rounded.w-100.h-100(id="mapa", style="display: flex; position: relative; overflow: hidden; min-height: 0pt;")
+
+		div(style="display: absolute; position: fixed; left: 0px; top: 45px; z-index: 7; width: 120px; align-items: center;")
+			div(style="background-color: white; margin: 10px; padding: 1px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px;")
+				div(style="" jstcache="0")
+					div.gm-style.place-card.place-card-large(jstcache="51")
+						.gm-style.place-desc-large
+							.gm-style.place-card.place-name(jstcache="24", jsan="7.place-name")= city
+							.gm-style.place-card.address(jstcache="25", jsan="7.address")= contry
+						.gm-style.navigate(jstcache="26")
+							.gm-style.navigate(jsaction="placeCard.directions")
+								a.gm-style.navigate-link(aria-label="Get directions to this location on Google Maps.", target="_blank", jstcache="38", href="https://maps.google.com/maps/dir//"+addr+"+"+city+"+"+contry+"/@"+pos.x+","+pos.y+",20.71z/data=!4m6!3m5!1s0x9616363f0d4f3947:0xb11246ac22578966!8m2!3d-40.5652846!4d-73.1099037!16s%2Fg%2F11k64p05_k?entry=ttu")
+									.gm-style.icon.navigate-icon
+									.gm-style.navigate-text Directions
+							.gm-style.tooltip-anchor
+								.gm-style.tooltip-tip-outer
+								.gm-style.tooltip-tip-inner
+								.gm-style.tooltip-content
+									div(jstcache="40") Get directions to this location on Google Maps.
+						.gm-style.review-box
+							div(jstcache="27", class="" style="display:none")
+							.gm-style.review-box.rating-stars(role="img", jstcache="28", style="display:none")
+								div(jstcache="29", class="icon rating-star rating-full-star rating-half-star rating-empty-star", style="display:none", jsan="7.icon,7.rating-star,7.rating-full-star,7.rating-half-star,7.rating-empty-star")
+
+							a(jstcache="30", class="" style="display:none")
+
+						.bottom-actions
+							.gm-style.bottom-actions.google-maps-link
+								a(aria-label="View larger map", target="_blank", jstcache="31", href="https://maps.google.com/maps?ll="+pos.x+","+pos.y+"&amp;z=7&amp;t=m&amp;hl=en&amp;gl=BD&amp;mapclient=embed&amp;q="+city+" "+contry+"", jsaction="mouseup:placeCard.largerMap") View larger map
+
+
+
+

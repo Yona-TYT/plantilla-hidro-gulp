@@ -1,0 +1,21 @@
+mixin HeroHeader
+	section.py-0#header
+		+Background({ image: `${CWD}assets/img/illustrations/hero-header.svg`, attrs: { style: { 'background-position': 'right top', 'background-size': 'contain'} }, className: 'd-none d-md-block' })
+		+Background({image: `${CWD}assets/img/illustrations/hero-bg.svg`, attrs: { style: { 'background-position': 'right top', 'background-size': 'contain'} }, className: 'd-md-none' })
+		.container
+			.row.align-items-center.min-vh-75.min-vh-lg-100
+					.col-md-7.col-lg-6.col-xxl-5.py-6.text-sm-start.text-center
+						h1.mt-6.mb-sm-4.fw-semi-bold.lh-sm.fs-4.fs-lg-5.fs-xl-6 Hidroingelec
+								br.d-block.d-lg-block
+								|Ingenieria Idraulica y Eléctrica
+						p.mb-4.fs-1 Servicios y asesorías Hidroingelec S.P.A. Somos una empresa dedicada a trabajos de ingeniería hidráulica y eléctrica con alcance en la región de Los Lagos, región de Los Rios y La Araucanía, también contamos con una amplia gama de productos para la venta.
+
+						h2.fw-bold.fs-3.fs-lg-5.lh-sm.mb-3 Misión
+
+						p.mb-4.fs-1 Ser líderes en asesoría y prestación de servicios en la captación, y abastecimiento de agua, proporcionar servicios integrales, soluciones flexibles a través de innovación tecnológica y gente comprometida, para así superar las expectativas de nuestros clientes.
+						h2.fw-bold.fs-3.fs-lg-5.lh-sm.mb-3 Visión
+
+						p.mb-4.fs-1 Ser reconocidos por los valores y profesionalidad anticipando el futuro del área hídrica, a través de tecnología de vanguardia y el desarrollo del personal.
+
+						a.btn.btn-primary.py-3.px-4(href='#services' role='button') Servicios
+              

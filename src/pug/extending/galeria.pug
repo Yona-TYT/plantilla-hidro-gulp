@@ -1,0 +1,89 @@
+
+//- ===============================================
+//-     Global  Variables
+//- ===============================================
+include ../Variables
+
+
+//- ===============================================
+//-     Basic Modules
+//- ===============================================
+include ../mixins/core/Functions
+include ../mixins/core/Background
+include ../mixins/core/Section
+include ../mixins/core/ThemeStyle
+include ../mixins/navbars/NavbarHidroingelec
+include ../mixins/home/landing/Footer
+include ../mixins/home/landing/Goup
+
+
+mixin GallCard(config)
+	.col-xxl-6.col-lg-8.col-md-8.col-sm-8.wow.fadeInUp
+		.row.flex-center
+			img.card-img(src=config.href alt='...')
+			.card-img-overlay.d-flex.flex-column.justify-content-center.px-5.px-md-3.px-lg-5(class=`${config.bg}`)
+    
+
+ 
+doctype html
+html()&attributes(attrsHtml)
+	head
+	block meta
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='viewport' content='width=device-width, initial-scale=1')
+
+
+	= '\n\n'
+	// ===============================================
+	//    Document Title
+	// ===============================================
+	title=title
+
+
+	= '\n\n'
+	// ===============================================
+	//    Favicons
+	// ===============================================
+	block favicon
+		link(rel="apple-touch-icon" sizes="180x180", href=`${CWD}assets/img/favicons/apple-touch-icon.svg`)
+		link(rel="icon" type="image/png" sizes="32x32", href=`${CWD}assets/img/favicons/favicon-32x32.svg`)
+		link(rel="icon" type="image/png" sizes="16x16", href=`${CWD}assets/img/favicons/favicon-16x16.svg`)
+		link(rel="shortcut icon" type="image/svg+xml", href=`${CWD}assets/img/favicons/favicon.svg`)
+		link(rel="manifest", href=`${CWD}assets/img/favicons/manifest.json`)
+		meta(name='msapplication-TileImage', content=`${CWD}assets/img/favicons/mstile-150x150.svg`)
+		meta(name="theme-color" content="#ffffff")
+
+
+	block headScripts
+
+	= '\n\n'
+	// ===============================================
+	//    Stylesheets
+	// ===============================================
+
+	block styles
+		+ThemeStyle
+		link(href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css", type="text/css", rel="StyleSheet", media="screen")
+
+	= '\n\n'
+	body
+		+NavbarHidroingelec
+		- var all_img = 3
+		section.py-8#projects
+			.container-lg
+				.row.flex-center
+					.col-lg-9.mx-auto.text-center.mb-3
+						h5.fw-bold.fs-3.fs-lg-5.lh-sm.mb-3 Galería
+
+						div(class="tz-gallery")
+							- for (var i=1; i<=all_img; i++)
+								a(class="lightbox", href=`${CWD}assets/img/gallery/`+i+".jpg")
+									+GallCard({href : `${CWD}assets/img/gallery/`+i+".jpg"})
+									//img(src=`${CWD}assets/img/gallery/`+i+".jpg", alt="Imagen")
+				script(src='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js')
+				script.
+					baguetteBox.run('.tz-gallery');
+
+		+Footer
+		+Goup
