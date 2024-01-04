@@ -1,4 +1,10 @@
 {
+"name": "nodejsservice",
+"version": "1.0.0",
+"engines": {
+  "node": "10.0.0",
+   "npm": "4.2.0"
+  },
   "name": "trafalgar",
   "version": "1.0.0",
   "description": "Landing, Corporate & Business Template",
