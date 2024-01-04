@@ -10,7 +10,7 @@ gulp.task("watch", () => {
   browserSync.init({
     server: { baseDir },
     // proxy: '127.0.0.1:8010',
-    port: 3000,
+    port: 443,
     open: false, // or "local"
     notify: false,
     middleware: compilePug,
