@@ -1,32 +1,48 @@
 const gulp = require("gulp");
 const { paths, baseDir, browserSync, isProd } = require("./utils.js");
 const { compilePug } = require("./pug.gulp.js");
+var connect = require('gulp-connect');
 
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 |  Watcher
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
+
+
+gulp.task('connect', function() {
+
+	//Browsersync Task
+	function connectServe(done){
+		connect.server({
+			root: paths.app,
+			livereload: true,
+			port: 2772
+		});
+	}
+
+	connectServe()
+});
+
 gulp.task("watch", () => {
 	//Browsersync Task
 	function browsersyncServe(done){
 		browserSync.init({
 			server: {baseDir},
-			// proxy: '127.0.0.1:8010',
+			//proxy: '127.0.0.1:8010',
 			//port: 3000,
-			//open: true, // or "local"
+			open: false, // or "local"
 			host: "35.160.120.126",
 			notify: false,
 			middleware: compilePug,
 		});
 		//done();
 	}
-
 	function browsersyncReload(cb){
 		browsersync.reload();
 		//cb();
 	}
 	//Watch Task
 	function watchTask(){
-		//console.log(paths)
+		//console.log(browserSync)
 		//console.log("YonaTest: "+paths.pug.src.all+"")
 		//console.log("YonaTest: "+paths.watch.map((dir) => `${paths.dir.dev}/${dir}`))
 		gulp.watch(paths.pug.src.all, gulp.series(browsersyncReload));
