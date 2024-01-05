@@ -12,44 +12,11 @@ var gls = require('gulp-live-server');
 
 gulp.task('connect', function() {
 
-	//Browsersync Task
 	function connectServe(done){
-
 		var server = gls.new('./server.js');
 		return server.start();
+	}
 
-		connect.server({
-			root: baseDir,
-			//livereload: true,
-			/*middleware: function (connect, opt) {
-        	    return compilePug({url:"tyt"}, "tyyh")
-			}*/
-		});
-	}
-	
-	function browsersyncReload(cb){
-		connect.reload();
-		//cb();
-	}
-	//Watch Task
-	function watchTask(){
-		//console.log(browserSync)
-		//console.log("YonaTest: "+paths.pug.src.all+"")
-		//console.log("YonaTest: "+paths.watch.map((dir) => `${paths.dir.dev}/${dir}`))
-		gulp.watch(paths.pug.src.all, gulp.series(browsersyncReload));
-		gulp.watch(paths.style.src, gulp.series("style"));
-		// gulp.watch(gulp.series("script"));
-		gulp.watch(paths.script.src, gulp.series("script"));
-		gulp.watch(
-			paths.watch.map((dir) => `${paths.dir.dev}/${dir}`),
-			gulp.series(browsersyncReload)
-		);
-	}
-	//console.log("Test hereeeeeeeeeee:")
-	//console.log(paths)
-	//console.log(compilePug(paths.base))
-	watchTask()
-	
 	connectServe()
 });
 
