@@ -25,17 +25,17 @@ mixin Footer
 
 			hr.text-300.mb-0 
 			.row.justify-content-lg-between
-				.col-6.col-sm-4.col-lg-auto.mb-3.text-center.text-md-start 
+				.col-6.col-sm-4.col-lg-auto.mb-3.pt-3.text-center.text-md-start 
 					a(href=`${CWD}index.html#header`).text-decoration-none
 						img.d-inline-block.align-top.img-fluid(src= `${CWD}assets/img/gallery/logo-min.svg` alt='' width='40')
 						span.text-theme.font-monospace.fs-1.ps-2= busin_name   
   
-				.col-6.col-sm-4.col-lg-auto.mb-3
+				.col-6.col-sm-4.col-lg-auto.mb-3.pt-3
 					each val in cont_fall
 						a.px-2(href=val.url)
 							#{val.icon}
 
-				.col-6.col-sm-4.col-lg-auto.mb-3
+				.col-6.col-sm-4.col-lg-auto.mb-3.pt-3
 					p.fs-1.text-dark.my-2.text-center.text-md-end &copy; This template is made with&nbsp;
 						svg.bi.bi-suit-heart-fill(xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#76C279' viewBox='0 0 16 16')
 							path(d='M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z')

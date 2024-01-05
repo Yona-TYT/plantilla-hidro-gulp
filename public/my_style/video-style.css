@@ -196,7 +196,7 @@ progress::-moz-progress-bar {
   opacity: 1;
 }
 
-button {
+.video.button {
   cursor: pointer;
   position: relative;
   margin-right: 7px;
@@ -207,11 +207,11 @@ button {
   background-color: transparent;
 }
 
-button * {
+.video.button * {
   pointer-events: none;
 }
 
-button::before {
+.video.button::before {
   content: attr(data-title);
   position: relative;
   display: none;
