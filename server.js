@@ -15,16 +15,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 // being rendered res.render()
 app.set('public', path.join(__dirname, 'public'));
   
-const PORT = 3000; 
+const port = process.env.PORT || 3000;
   
 app.use('/', function(req, res, next) {
 	compilePug(req, res, next)
 });
 
   
-app.listen(PORT, (error) =>{ 
+app.listen(port, (error) =>{ 
     if(!error) 
-        console.log("Server is Successfully Running, and App is listening on port "+ PORT) 
+        console.log("Server is Successfully Running, and App is listening on port "+ port) 
     else 
         console.log("Error occurred, server can't start", error); 
     } 
