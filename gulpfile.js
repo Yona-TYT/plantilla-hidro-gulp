@@ -19,4 +19,4 @@ gulp.task('live', gulp.series('clean:live', 'build', 'build:push'));
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 |  Run development environment
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
-gulp.task('default', gulp.series('clean', 'compile', 'connect'));
+gulp.task('default', gulp.series('clean', 'compile', 'watch', 'connect'));
