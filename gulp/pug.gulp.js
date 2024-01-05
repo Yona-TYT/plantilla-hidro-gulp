@@ -59,8 +59,8 @@ const compilePug = (req, res, next) => {
     html = pretty(html, { ocd: false });
 
     html = html.replace(/\s*(<!-- end of)/g, '$1');
-	res.send(html);
-    //fs.writeFileSync(`${baseDir}/${file}.html`, html);
+	//res.send(html);
+    fs.writeFileSync(`${baseDir}/${file}.html`, html);
   }
 
   
