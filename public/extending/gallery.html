@@ -39,7 +39,8 @@
   <link href="../../my_style/style.css" type="text/css" rel="StyleSheet" media="screen" />
   <!--link(href=`${CWD}assets/css/animate.min.css`, type="text/css", rel="StyleSheet", media="screen")-->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" type="text/css" rel="StyleSheet" media="screen" />
-  <link href="resources/css/gallery.css" type="text/css" rel="StyleSheet" media="screen">
+  <link href="../my_style/gallery.css" type="text/css" rel="StyleSheet" media="screen">
+  <link href="../my_style/gallery-grid.css" type="text/css" rel="StyleSheet" media="screen">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css" type="text/css" rel="StyleSheet" media="screen">
 
 
@@ -62,40 +63,26 @@
         </div>
       </div>
     </nav>
-    <section class="py-8" id="projects">
-      <div class="container-lg">
-        <div class="row flex-center">
-          <div class="col-lg-9 mx-auto text-center mb-3">
+    <section class="py-0" id="videos">
+      <div class="container p-2">
+        <div class="row align-items-center min-vh-75 min-vh-lg-100">
+          <div class="col-lg-9 mx-auto text-center mb-3 pt-8">
             <h5 class="fw-bold fs-3 fs-lg-5 lh-sm mb-3">Galería</h5>
-            <div class="tz-gallery"><a class="lightbox" href="../assets/img/gallery/1.jpg">
-                <div class="col-xxl-6 col-lg-8 col-md-8 col-sm-8 wow fadeInUp">
-                  <div class="row flex-center"><img class="card-img" src="../assets/img/gallery/1.jpg" alt="..." />
-                    <div class="card-img-overlay d-flex flex-column justify-content-center px-5 px-md-3 px-lg-5 undefined"></div>
-                  </div>
+            <div class="container gallery-container">
+              <div class="tz-gallery">
+                <div class="row g-5"><a class="lightbox" href="../assets/img/gallery/1.jpg">
+                    <!--+GallCard({href : `${CWD}assets/img/gallery/`+i+".jpg"})--><img src="../assets/img/gallery/1.jpg" alt="Imagen"></a><a class="lightbox" href="../assets/img/gallery/2.jpg">
+                    <!--+GallCard({href : `${CWD}assets/img/gallery/`+i+".jpg"})--><img src="../assets/img/gallery/2.jpg" alt="Imagen"></a><a class="lightbox" href="../assets/img/gallery/3.jpg">
+                    <!--+GallCard({href : `${CWD}assets/img/gallery/`+i+".jpg"})--><img src="../assets/img/gallery/3.jpg" alt="Imagen"></a>
                 </div>
-                <!--img(src=`${CWD}assets/img/gallery/`+i+".jpg", alt="Imagen")-->
-              </a><a class="lightbox" href="../assets/img/gallery/2.jpg">
-                <div class="col-xxl-6 col-lg-8 col-md-8 col-sm-8 wow fadeInUp">
-                  <div class="row flex-center"><img class="card-img" src="../assets/img/gallery/2.jpg" alt="..." />
-                    <div class="card-img-overlay d-flex flex-column justify-content-center px-5 px-md-3 px-lg-5 undefined"></div>
-                  </div>
-                </div>
-                <!--img(src=`${CWD}assets/img/gallery/`+i+".jpg", alt="Imagen")-->
-              </a><a class="lightbox" href="../assets/img/gallery/3.jpg">
-                <div class="col-xxl-6 col-lg-8 col-md-8 col-sm-8 wow fadeInUp">
-                  <div class="row flex-center"><img class="card-img" src="../assets/img/gallery/3.jpg" alt="..." />
-                    <div class="card-img-overlay d-flex flex-column justify-content-center px-5 px-md-3 px-lg-5 undefined"></div>
-                  </div>
-                </div>
-                <!--img(src=`${CWD}assets/img/gallery/`+i+".jpg", alt="Imagen")-->
-              </a>
+              </div>
             </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+            <script>
+              baguetteBox.run('.tz-gallery');
+            </script>
           </div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-        <script>
-          baguetteBox.run('.tz-gallery');
-        </script>
       </div>
     </section>
     <section class="py-0">
