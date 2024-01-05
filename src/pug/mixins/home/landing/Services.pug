@@ -7,13 +7,13 @@ mixin Services
 					h5.fw-bold.fs-3.fs-lg-5.lh-sm.mb-3 Services
 				each val in services
 					.col-xxl-6.col-lg-4.col-md-4.col-sm-6.wow.fadeInUp(data-wow-delay=".3s", style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;")
-						.bg-light.rounded.p-5.ervices-item
+						.bg-light.rounded.p-3.ervices-item(style="min-height: 280px;")
 							.d-flex(style="align-items: center; justify-content: center;")
-								.mb-4.rounded-circle.services-inner-icon
+								.mb-2.rounded-circle.services-inner-icon
 									#{val.icon}
 							.h4= val.title
 							p.mb-4= val.text
-							button.btn.btn-primary.py-3(type="button", href=val.url)= val.name
+							button.btn.btn-primary.py-2(type="button", href=val.url)= val.name
 
 
 

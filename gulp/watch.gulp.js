@@ -23,7 +23,7 @@ gulp.task("watch", () => {
     server: { baseDir },
     // proxy: '127.0.0.1:8010',
     port: port,
-    open: true, // or "local"
+    open: false, // or "local"
     notify: false,
     middleware: compilePug,
   });

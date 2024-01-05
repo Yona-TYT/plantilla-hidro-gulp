@@ -351,8 +351,8 @@
 
 /*** Services Start ***/
 .services-inner-icon {
-    width: 130px;
-    height: 130px;
+    width: 60px;
+    height: 60px;
     background: var(--bs-dark);
     display: flex;
     align-items: center;
