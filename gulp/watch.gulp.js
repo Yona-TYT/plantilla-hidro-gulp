@@ -2,7 +2,7 @@ const gulp = require("gulp");
 const { paths, baseDir, browserSync, isProd } = require("./utils.js");
 const { compilePug } = require("./pug.gulp.js");
 const gls = require('gulp-live-server');
-const port = process.env.PORT || 1000;
+const port = process.env.PORT || (process.env.NODE_ENV == 1 ? 8000 : 1000);
 
 gulp.task('connect', function() {
 
@@ -23,7 +23,7 @@ gulp.task("watch", () => {
     server: { baseDir },
     // proxy: '127.0.0.1:8010',
     port: port,
-    open: false, // or "local"
+    open: (process.env.NODE_ENV == 1 ? true : false), // or "local"
     notify: false,
     middleware: compilePug,
   });
