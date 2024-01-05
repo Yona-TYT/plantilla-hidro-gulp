@@ -26,6 +26,8 @@ const locals = {
 |  Pug compiling | middleware
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 const compilePug = (req, res, next) => {
+//console.log("Aqui Hay!!!!")
+//console.log(req)
   const parsed = url.parse(req.url);
 
   const mkdir = (dir) => {
@@ -57,9 +59,11 @@ const compilePug = (req, res, next) => {
     html = pretty(html, { ocd: false });
 
     html = html.replace(/\s*(<!-- end of)/g, '$1');
-
-    fs.writeFileSync(`${baseDir}/${file}.html`, html);
+	res.send(html);
+    //fs.writeFileSync(`${baseDir}/${file}.html`, html);
   }
+
+  
 
   next();
 };

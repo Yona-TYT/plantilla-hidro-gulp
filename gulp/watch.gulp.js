@@ -7,11 +7,17 @@ var connect = require('gulp-connect');
 |  Watcher
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-*/
 
+var gls = require('gulp-live-server');
+
 
 gulp.task('connect', function() {
 
 	//Browsersync Task
 	function connectServe(done){
+
+		var server = gls.new('./server.js');
+		return server.start();
+
 		connect.server({
 			root: baseDir,
 			//livereload: true,
@@ -20,7 +26,7 @@ gulp.task('connect', function() {
 			}*/
 		});
 	}
-	/*
+	
 	function browsersyncReload(cb){
 		connect.reload();
 		//cb();
@@ -42,22 +48,12 @@ gulp.task('connect', function() {
 	//console.log("Test hereeeeeeeeeee:")
 	//console.log(paths)
 	//console.log(compilePug(paths.base))
-	//watchTask()
-	*/
+	watchTask()
+	
 	connectServe()
 });
 
 gulp.task("watch", () => {
-
-	function connectServe(){
-		connect.server({
-			root: baseDir,
-			livereload: true,
-			/*middleware: function (connect, opt) {
-        	    return compilePug({url:"tyt"}, "tyyh")
-			}*/
-		});
-	}
 	//Browsersync Task
 	function browsersyncServe(done){
 		browserSync.init({
@@ -90,7 +86,7 @@ gulp.task("watch", () => {
 			gulp.series(browsersyncReload)
 		);
 	}
-	connectServe()
+
 	browsersyncServe()
 	watchTask()
 });
