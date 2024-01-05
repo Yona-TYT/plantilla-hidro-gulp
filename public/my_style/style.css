@@ -168,10 +168,9 @@
 }
 
 .navbar-toggler {
-    background: var(--bs-secondary);
-    color: var(--bs-light) !important;
+    color: rgba(0,0,0,0.95) !important;
     padding: 5px 12px;
-    border: 2px solid var(--bs-primary) !important;
+    border: 2px solid rgba(0,0,0,0.1) !important;
 }
 
 /*** Navbar End ***/

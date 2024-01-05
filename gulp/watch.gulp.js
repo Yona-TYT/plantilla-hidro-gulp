@@ -2,6 +2,7 @@ const gulp = require("gulp");
 const { paths, baseDir, browserSync, isProd } = require("./utils.js");
 const { compilePug } = require("./pug.gulp.js");
 const gls = require('gulp-live-server');
+const port = process.env.PORT || 1000;
 
 gulp.task('connect', function() {
 
@@ -21,7 +22,7 @@ gulp.task("watch", () => {
   browserSync.init({
     server: { baseDir },
     // proxy: '127.0.0.1:8010',
-    port: 3000,
+    port: port,
     open: true, // or "local"
     notify: false,
     middleware: compilePug,
