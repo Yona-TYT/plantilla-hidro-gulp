@@ -52,7 +52,7 @@ gulp.task("watch", () => {
 			//proxy: '127.0.0.1:8010',
 			//port: 3000,
 			open: false, // or "local"
-			//host: "35.160.120.126",
+			host: "hidroingelec.onrender.com",
 			//notify: false,
 			middleware: compilePug,
 		});
