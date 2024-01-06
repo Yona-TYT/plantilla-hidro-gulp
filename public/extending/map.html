@@ -617,47 +617,87 @@
   <link href="../../my_style/style.css" type="text/css" rel="StyleSheet" media="screen" />
   <!--link(href=`${CWD}assets/css/animate.min.css`, type="text/css", rel="StyleSheet", media="screen")-->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" type="text/css" rel="StyleSheet" media="screen" />
-  <link href="../my_style/video-style.css" type="text/css" rel="StyleSheet" media="screen">
+  <link href="../my_style/map.css" type="text/css" rel="StyleSheet" media="screen">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css" type="text/css" rel="StyleSheet" media="screen">
 
 
-  <body onLoad="CargaScript(-40.5654983,-73.1101296);">
-    <script src="..//my_style/map/map.js"></script>
-    <div class="border-0 rounded w-100 h-100" id="mapa" style="display: flex; position: relative; overflow: hidden; min-height: 0pt;"></div>
-    <div style="display: absolute; position: fixed; left: 0px; top: 45px; z-index: 7; width: 120px; align-items: center;">
-      <div style="background-color: white; margin: 10px; padding: 1px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px;">
-        <div jstcache="0">
-          <div class="gm-style place-card place-card-large" jstcache="51">
-            <div class="gm-style place-desc-large">
-              <div class="gm-style place-card place-name" jstcache="24" jsan="7.place-name">Osorno</div>
-              <div class="gm-style place-card address" jstcache="25" jsan="7.address">Chile</div>
-            </div>
-            <div class="gm-style navigate" jstcache="26">
-              <div class="gm-style navigate" jsaction="placeCard.directions"><a class="gm-style navigate-link" aria-label="Get directions to this location on Google Maps." target="_blank" jstcache="38" href="https://maps.google.com/maps/dir//Fray+Juan+de+Irarguen+248+Osorno+Chile/@-40.5654983,-73.1101296,20.71z/data=!4m6!3m5!1s0x9616363f0d4f3947:0xb11246ac22578966!8m2!3d-40.5652846!4d-73.1099037!16s%2Fg%2F11k64p05_k?entry=ttu">
-                  <div class="gm-style icon navigate-icon"></div>
-                  <div class="gm-style navigate-text">Directions</div>
-                </a></div>
-              <div class="gm-style tooltip-anchor">
-                <div class="gm-style tooltip-tip-outer"></div>
-                <div class="gm-style tooltip-tip-inner"></div>
-                <div class="gm-style tooltip-content">
-                  <div jstcache="40">Get directions to this location on Google Maps.</div>
-                </div>
-              </div>
-            </div>
-            <div class="gm-style review-box">
-              <div jstcache="27" style="display:none"></div>
-              <div class="gm-style review-box rating-stars" role="img" jstcache="28" style="display:none">
-                <div class="icon rating-star rating-full-star rating-half-star rating-empty-star" jstcache="29" style="display:none" jsan="7.icon,7.rating-star,7.rating-full-star,7.rating-half-star,7.rating-empty-star"></div>
-              </div><a jstcache="30" style="display:none"></a>
-            </div>
-            <div class="bottom-actions">
-              <div class="gm-style bottom-actions google-maps-link"><a aria-label="View larger map" target="_blank" jstcache="31" href="https://maps.google.com/maps?ll=-40.5654983,-73.1101296&amp;amp;z=7&amp;amp;t=m&amp;amp;hl=en&amp;amp;gl=BD&amp;amp;mapclient=embed&amp;amp;q=Osorno Chile" jsaction="mouseup:placeCard.largerMap">View larger map</a></div>
-            </div>
+  <script src="..//my_style/map/map.js"></script>
+
+  <body onLoad="CargaScript(-40.5635131,-73.1112443,'Aqui Hay Aqui Hay!!');">
+    <div class="map-container">
+      <div class="placeDiv">
+        <div class="placecard __container">
+          <div class="placecard __left">
+            <p class="placecard __business-name">Hidroingelec S.P.A</p>
+            <p class="placecard __info">Antonio de San Miguel 422, 5310004 Osorno, Los Lagos, Chile</p><a class="placecard __view-large" id="A_41" target="_blank" href="https://www.google.com/maps/place/Servicios+y+asesor%C3%ADas+Hidroingelec+S.P.A/@-40.5635131,-73.1112443,18.75z/data=!4m6!3m5!1s0x961637004d96f5e1:0xf93fcd46c9742c20!8m2!3d-40.5633755!4d-73.1113329!16s%2Fg%2F11vpfznrlz?entry=ttu">View larger map</a>
           </div>
+          <!-- placecard__left-->
+          <div class="placecard __right"><a class="placecard __direction-link" id="A_9" target="_blank" href="https://www.google.com/maps/dir//Servicios+y+asesor%C3%ADas+Hidroingelec+S.P.A+-+Antonio+de+San+Miguel+422,+5310004+Osorno,+Los+Lagos,+Chile/@-40.5635131,-73.1112443,18.75z/data=!4m17!1m7!3m6!1s0x961637004d96f5e1:0xf93fcd46c9742c20!2sServicios+y+asesor%C3%ADas+Hidroingelec+S.P.A!8m2!3d-40.5633755!4d-73.1113329!16s%2Fg%2F11vpfznrlz!4m8!1m0!1m5!1m1!1s0x961637004d96f5e1:0xf93fcd46c9742c20!2m2!1d-73.1113329!2d-40.5633755!3e2?entry=ttu">
+              <div class="placecard __direction-icon"></div> Directions
+            </a></div>
+          <!-- placecard__right-->
         </div>
+        <!-- placecard__container-->
       </div>
+      <!-- placeDiv-->
     </div>
+    <!-- map-container-->
+    <div class="border-0 rounded w-100 h-100" id="map-canvas" style="display: flex; position: relative; overflow: hidden; min-height: 0pt;"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false" type="text/javascript"></script>
+    <!-- PlaceCArd
+    div(style="background-color: white; margin: 10px; padding: 1px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px;")
+    	div(style="" jstcache="0")
+    		div.gm-style.place-card.place-card-large(jstcache="51")
+    			.gm-style.place-desc-large
+    				.gm-style.place-card.place-name(jstcache="24", jsan="7.place-name")= city
+    				.gm-style.place-card.address(jstcache="25", jsan="7.address")= contry
+    			.gm-style.navigate(jstcache="26")
+    					.gm-style.navigate(jsaction="placeCard.directions")
+    						a.gm-style.navigate-link(aria-label="Get directions to this location on Google Maps.", target="_blank", jstcache="38", href="https://maps.google.com/maps/dir//"+addr+"+"+city+"+"+contry+"/@"+pos.x+","+pos.y+",20.71z/data=!4m6!3m5!1s0x9616363f0d4f3947:0xb11246ac22578966!8m2!3d-40.5652846!4d-73.1099037!16s%2Fg%2F11k64p05_k?entry=ttu")
+    							.gm-style.icon.navigate-icon
+    							.gm-style.navigate-text Directions
+    					.gm-style.tooltip-anchor
+    						.gm-style.tooltip-tip-outer
+    						.gm-style.tooltip-tip-inner
+    						.gm-style.tooltip-content
+    							div(jstcache="40") Get directions to this location on Google Maps.
+    			.gm-style.review-box
+    				div(jstcache="27", class="" style="display:none")
+    				.gm-style.review-box.rating-stars(role="img", jstcache="28", style="display:none")
+    					div(jstcache="29", class="icon rating-star rating-full-star rating-half-star rating-empty-star", style="display:none", jsan="7.icon,7.rating-star,7.rating-full-star,7.rating-half-star,7.rating-empty-star")
+    				a(jstcache="30", class="" style="display:none")
+    				.bottom-actions
+    					.gm-style.bottom-actions.google-maps-link
+    						a(aria-label="View larger map", target="_blank", jstcache="31", href="https://maps.google.com/maps?ll="+pos.x+","+pos.y+"&amp;z=7&amp;t=m&amp;hl=en&amp;gl=BD&amp;mapclient=embed&amp;q="+city+" "+contry+"", jsaction="mouseup:placeCard.largerMap") View larger map
+    
+    
+    -->
+    <!--div(style="display: absolute; position: fixed; left: 0px; top: 45px; z-index: 7; width: 120px; align-items: center;")
+    div(style="background-color: white; margin: 10px; padding: 1px; box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px; border-radius: 2px;")
+    	div(style="" jstcache="0")
+    		div.gm-style.place-card.place-card-large(jstcache="51")
+    			.gm-style.place-desc-large
+    				.gm-style.place-card.place-name(jstcache="24", jsan="7.place-name")= city
+    				.gm-style.place-card.address(jstcache="25", jsan="7.address")= contry
+    			.gm-style.navigate(jstcache="26")
+    				.gm-style.navigate(jsaction="placeCard.directions")
+    					a.gm-style.navigate-link(aria-label="Get directions to this location on Google Maps.", target="_blank", jstcache="38", href="https://maps.google.com/maps/dir//"+addr+"+"+city+"+"+contry+"/@"+pos.x+","+pos.y+",20.71z/data=!4m6!3m5!1s0x9616363f0d4f3947:0xb11246ac22578966!8m2!3d-40.5652846!4d-73.1099037!16s%2Fg%2F11k64p05_k?entry=ttu")
+    						.gm-style.icon.navigate-icon
+    						.gm-style.navigate-text Directions
+    				.gm-style.tooltip-anchor
+    					.gm-style.tooltip-tip-outer
+    					.gm-style.tooltip-tip-inner
+    					.gm-style.tooltip-content
+    						div(jstcache="40") Get directions to this location on Google Maps.
+    			.gm-style.review-box
+    				div(jstcache="27", class="" style="display:none")
+    				.gm-style.review-box.rating-stars(role="img", jstcache="28", style="display:none")
+    					div(jstcache="29", class="icon rating-star rating-full-star rating-half-star rating-empty-star", style="display:none", jsan="7.icon,7.rating-star,7.rating-full-star,7.rating-half-star,7.rating-empty-star")
+    				a(jstcache="30", class="" style="display:none")
+    			.bottom-actions
+    				.gm-style.bottom-actions.google-maps-link
+    					a(aria-label="View larger map", target="_blank", jstcache="31", href="https://maps.google.com/maps?ll="+pos.x+","+pos.y+"&amp;z=7&amp;t=m&amp;hl=en&amp;gl=BD&amp;mapclient=embed&amp;q="+city+" "+contry+"", jsaction="mouseup:placeCard.largerMap") View larger map
+    -->
   </body>
 
 </html>
