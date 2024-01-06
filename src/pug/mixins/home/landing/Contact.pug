@@ -33,7 +33,7 @@ mixin Contact
 								h4.text-dark= val.title
 								div.d-flex.justify-content-center
 									each conte in val.content
-										a.px-2(href=conte.url)
+										a.px-2(href=conte.url, target='_blank')
 											#{conte.icon}
 											= conte.title
 
