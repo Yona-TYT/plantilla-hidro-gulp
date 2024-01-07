@@ -26,16 +26,17 @@ mixin Contact
 			.row.g-4.wow.fadeInUp(data-wow-delay=".3s", style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;")
 				each val in contact
 					.col-xxl-3.col-lg-6.col-md-6.col-sm-12
-						.d-flex.bg-light.p-3.rounded.contact-btn-link
-							.btn.btn-primary.align-items-center.justify-content-center.bg-primary.rounded-circle.p-3.ms-3(style="width: 64px; height: 64px;")
-								#{val.icon}
+						.d-flex.bg-light.p-2.rounded.contact-btn-link
+							.d-flex.align-items-center.justify-content-center.bg-primary.rounded-circle.p-3.ms-3(style="width: 64px; height: 64px; min-height: 64px; min-width: 64px;")
+								.btn-primary.p-2
+									#{val.icon}
 							.ms-3.contact-link
 								h4.text-dark= val.title
 								div.d-flex.justify-content-center
 									each conte in val.content
 										a.px-2(href=conte.url, target='_blank')
 											#{conte.icon}
-											= conte.title
+											h5.d-inline.fs-1= conte.title
 
 
 

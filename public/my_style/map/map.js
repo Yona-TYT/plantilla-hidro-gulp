@@ -31,7 +31,6 @@ function inicializar() {
 		map.setCenter(center);
   });
 
-
 }
 
 function CargaScript(x, y, t) {
