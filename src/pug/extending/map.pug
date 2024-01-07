@@ -65,11 +65,13 @@ html()&attributes(attrsHtml)
 	- var contry = "Antonio de San Miguel 422, 5310004 Osorno, Los Lagos, Chile"
 
 	- var dir_addr = "Servicios+y+asesor%C3%ADas+Hidroingelec+S.P.A+-+Antonio+de+San+Miguel+422,+5310004+Osorno,+Los+Lagos,+Chile"
-	- var dir_name = "Servicios+y+asesor%C3%ADas+Hidroingelec+S.P.A"
+	- var dir_name = "Servicios+y+asesorías+Hidroingelec+S.P.A"
+	- var place_data = "data=!4m6!3m5!1s0x684af8ad07a94e55:0x9fa28d06f7a7d26f!8m2!3d-40.5633755!4d-73.1113329!16s%2Fg%2F11lctfcrzd?entry=ttu"
+	- var dir_data = "data=!4m8!4m7!1m0!1m5!1m1!1s0x684af8ad07a94e55:0x9fa28d06f7a7d26f!2m2!1d-73.1113329!2d-40.5633755?entry=ttu"
 
 	-var info = "Antonio de San Miguel 422, 5310004 Osorno, Los Lagos, Chile"
 
-	- var pos = {x : -40.5635131, y : -73.1112443, z: 18.75, t : 'Aqui Hay Aqui Hay!!'}
+	- var pos = {x : -40.5633755, y : -73.1113128, z: 18.75, t : 'Aqui Hay Aqui Hay!!'}
 	script(src=`${CWD}/my_style/map/map.js`)
 	body(onLoad="CargaScript("+pos.x+","+pos.y+",'"+pos.t+"');")
 
@@ -79,10 +81,9 @@ html()&attributes(attrsHtml)
 					div(class= "placecard __left")
 						p(class= "placecard __business-name")= business
 						p(class= "placecard __info")= info
-						a(id= "A_41", class= "placecard __view-large", target='_blank' href="https://www.google.com/maps/place/"+dir_name+"/@"+pos.x+","+pos.y+","+pos.z+"z/data=!4m6!3m5!1s0x961637004d96f5e1:0xf93fcd46c9742c20!8m2!3d-40.5633755!4d-73.1113329!16s%2Fg%2F11vpfznrlz?entry=ttu") View larger map
-					// placecard__left
+						a(id= "A_41", class= "placecard __view-large", target='_blank' href="https://www.google.com/maps/place/"+dir_name+"/@"+pos.x+","+pos.y+","+pos.z+"z/"+place_data+"") View larger map
 					div(class= "placecard __right")
-						a(id= "A_9", class= "placecard __direction-link",target='_blank' href="https://www.google.com/maps/dir//"+dir_addr+"/@"+pos.x+","+pos.y+","+pos.z+"z/data=!4m17!1m7!3m6!1s0x961637004d96f5e1:0xf93fcd46c9742c20!2s"+dir_name+"!8m2!3d-40.5633755!4d-73.1113329!16s%2Fg%2F11vpfznrlz!4m8!1m0!1m5!1m1!1s0x961637004d96f5e1:0xf93fcd46c9742c20!2m2!1d-73.1113329!2d-40.5633755!3e2?entry=ttu")
+						a(id= "A_9", class= "placecard __direction-link",target='_blank' href="https://www.google.com/maps/dir//"+dir_addr+"/@"+pos.x+","+pos.y+","+pos.z+"z/"+dir_data+"")
 							div(class= "placecard __direction-icon")
 							|                   Directions
 					// placecard__right

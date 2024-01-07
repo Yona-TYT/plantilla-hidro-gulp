@@ -23,11 +23,16 @@ function inicializar() {
 		title: pos.title,
 	});
 
+	//Resize map
+	google.map.event.addDomListener(window, 'load', initialize);
+ 	google.map.event.addDomListener(window, "resize", function() {
+ 		var center = map.getCenter();
+ 		google.map.event.trigger(map, "resize");
+		map.setCenter(center);
+  });
+
 
 }
-
-//https://www.google.com/maps/place/Antonio+de+San+Miguel+422,+5310004+Osorno,+Los+Lagos,+Chile/@-40.5633755,-73.1119766,19z/data=!3m1!4b1!4m6!3m5!1s0x96163638aa4212ad:0xe41795a23bcc6200!8m2!3d-40.5633755!4d-73.1113329!16s%2Fg%2F11jtvx3_7h?entry=ttu
-
 
 function CargaScript(x, y, t) {
 	pos = {x : x, y : y, title : t} 
