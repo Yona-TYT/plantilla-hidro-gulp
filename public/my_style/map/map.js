@@ -24,10 +24,10 @@ function inicializar() {
 	});
 
 	//Resize map
-	google.map.event.addDomListener(window, 'load', initialize);
- 	google.map.event.addDomListener(window, "resize", function() {
+	//google.maps.event.addDomListener(window, 'load', initialize);
+ 	google.maps.event.addDomListener(window, "resize", function() {
  		var center = map.getCenter();
- 		google.map.event.trigger(map, "resize");
+ 		google.maps.event.trigger(map, "resize");
 		map.setCenter(center);
   });
 
