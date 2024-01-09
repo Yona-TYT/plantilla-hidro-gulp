@@ -1,28 +1,20 @@
 mixin FooterList(...items)
 	each item in items
 		li.mb-3
-			a.text-700.text-decoration-none(href='#!')
-				=item
+			a.text-700.text-decoration-none(href= item.url)
+				=item.t
 
 mixin Footer
 	section.py-0
 		+Background({ image: `${CWD}assets/img/illustrations/footer-bg.png`, attrs: { style: { 'background-position': 'center', 'background-size': 'cover'} }, className: '' })
 		.container
 			.row.justify-content-lg-between(style="padding-top:5rem")
-				.col-6.col-sm-4.col-lg-auto.mb-3
-					h6.mb-3.text-1000.fw-semi-bold COMPANY 
-					ul.list-unstyled.mb-md-4.mb-lg-0
-						+FooterList('About Us','Team','Careers','Contact')
-
-				.col-6.col-sm-4.col-lg-auto.mb-3
-					h6.mb-3.text-1000.fw-semi-bold INVEST 
-					ul.list-unstyled.mb-md-4.mb-lg-0
-						+FooterList('Features','How it works','Pricing','Login')
-				.col-6.col-sm-4.col-lg-auto.mb-3
-					h6.mb-3.text-1000.fw-semi-bold LEGAL 
-					ul.list-unstyled.mb-md-4.mb-lg-0
-						+FooterList('Privacy','Terms','Security')
-
+				each val in foot_list
+					.col-6.col-sm-4.col-lg-auto.mb-3
+						h6.mb-3.text-1000.fw-semi-bold= val.t 
+						ul.list-unstyled.mb-md-4.mb-lg-0
+							each vlu in val.l
+								+FooterList(vlu)
 			hr.text-300.mb-0 
 			.row.justify-content-lg-between
 				.col-6.col-sm-4.col-lg-auto.mb-3.pt-3.text-center.text-md-start 

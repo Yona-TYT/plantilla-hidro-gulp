@@ -2,7 +2,7 @@
 
 var fs = require('fs');
 const file = "./node_modules/gulp-sass/index.js";
-const old_tx = "replacement";
+const old_tx = "node-sass";
 const new_tx = "sass";
 
 fs.readFile(file, 'utf8', function (err,data) {
